@@ -1,0 +1,16 @@
+.todo {
+    &-tiem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 23px 0;
+    }
+}
+.action {
+    &-wrapp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
