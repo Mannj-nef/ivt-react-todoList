@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Button from "./button/Button";
 import Title from "./title/Title";
 import Input from "./input/Input";
+import ItemList from "./list/ItemList";
 import Panigation from "./panigation/Panigation";
 import Divider from "./divider/Divider";
 import "./style.scss";
-import Items from "./list/Items";
 
 class TodolList extends Component {
   render() {
@@ -20,7 +20,7 @@ class TodolList extends Component {
         </div>
         <Divider></Divider>
         <ul className="todo-main">
-          <Items></Items>
+          <ItemList></ItemList>
         </ul>
         <Divider></Divider>
         <Panigation></Panigation>

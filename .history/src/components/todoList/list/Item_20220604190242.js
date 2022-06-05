@@ -11,16 +11,16 @@ export default class Item extends Component {
   render() {
     const { value } = this.props;
     return (
-      <>
-        <li className="todo-tiem">
-          <span>{value}</span>
-          <span className="action-wrapp">
-            <Button value={"✔"} check></Button>
-            <Button value={"X"}></Button>
-          </span>
-        </li>
+      <li className="todo-tiem">
+        <span>{value}</span>
+        <span className="action-wrapp">
+          <Button value={"✔"} check></Button>
+          <Button value={"X"}></Button>
+        </span>
         <Divider></Divider>
-      </>
+      </li>
     );
   }
 }
+
+<></>;
