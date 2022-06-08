@@ -7,12 +7,13 @@ export default class Button extends Component {
     this.props = props;
   }
   render() {
-    const { value, active, check, add } = this.props;
+    const { value, active, check, add, onAddTask } = this.props;
     return (
       <button
         className={`btn ${active ? "btn-active" : ""} ${
           check ? "btn-check" : ""
         } ${add ? "btn-add" : ""}`}
+        onClick={onAddTask}
       >
         {value}
       </button>

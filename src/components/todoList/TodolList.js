@@ -9,17 +9,41 @@ import Items from "./list/Items";
 import { listTasks } from "../../data/data";
 
 class TodolList extends Component {
-  handell(newValue) {
-    console.log(newValue);
+  constructor(props) {
+    super(props);
+    this.state = {
+      valueInput: "",
+      listTasks,
+    };
   }
+
+  handleSetValueInput = (valueInput) => {
+    this.setState({ valueInput: valueInput });
+  };
+  addTask = () => {
+    this.setState({
+      ...this.state,
+      listTasks: listTasks.push({
+        taskName: this.state.valueInput,
+        state: false,
+      }),
+    });
+
+    console.log(this.state.listTasks);
+  };
+
   render() {
+    const { valueInput } = this.state;
     return (
       <div className="todo-app">
         <div className="todo-header">
           <Title title="TO DO LIST APPLICATION"></Title>
           <div className="todo-task_wrapp">
-            <Input funChange={this.handell}></Input>
-            <Button value="+" add></Button>
+            <Input
+              valueInput={valueInput}
+              onSetInput={this.handleSetValueInput}
+            ></Input>
+            <Button value="+" add onAddTask={this.addTask}></Button>
           </div>
         </div>
         <Divider></Divider>

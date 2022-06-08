@@ -10,7 +10,6 @@ export default class Item extends Component {
 
   render() {
     const { taskItem } = this.props;
-    console.log(taskItem);
     return (
       <>
         <li className="todo-tiem">
