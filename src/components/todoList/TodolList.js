@@ -6,21 +6,25 @@ import Panigation from "./panigation/Panigation";
 import Divider from "./divider/Divider";
 import "./style.scss";
 import Items from "./list/Items";
+import { listTasks } from "../../data/data";
 
 class TodolList extends Component {
+  handell(newValue) {
+    console.log(newValue);
+  }
   render() {
     return (
       <div className="todo-app">
         <div className="todo-header">
           <Title title="TO DO LIST APPLICATION"></Title>
           <div className="todo-task_wrapp">
-            <Input></Input>
+            <Input funChange={this.handell}></Input>
             <Button value="+" add></Button>
           </div>
         </div>
         <Divider></Divider>
         <ul className="todo-main">
-          <Items></Items>
+          <Items tasks={listTasks}></Items>
         </ul>
         <Divider></Divider>
         <Panigation></Panigation>

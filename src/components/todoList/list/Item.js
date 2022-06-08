@@ -9,13 +9,14 @@ export default class Item extends Component {
   }
 
   render() {
-    const { value } = this.props;
+    const { taskItem } = this.props;
+    console.log(taskItem);
     return (
       <>
         <li className="todo-tiem">
-          <span>{value}</span>
+          <span>{taskItem?.taskName}</span>
           <span className="action-wrapp">
-            <Button value={"✔"} check></Button>
+            <Button value={"✔"} check={taskItem?.state}></Button>
             <Button value={"X"}></Button>
           </span>
         </li>
