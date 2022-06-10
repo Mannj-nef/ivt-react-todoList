@@ -6,7 +6,7 @@ import Panigation from "./panigation/Panigation";
 import Divider from "./divider/Divider";
 import "./style.scss";
 import Items from "./list/Items";
-import { listTasks } from "../../data/data";
+import { listTasks, listTasksValue } from "../../data/data";
 
 class TodolList extends Component {
   constructor(props) {
@@ -15,21 +15,29 @@ class TodolList extends Component {
       valueInput: "",
       listTasks,
     };
+    this.inputRef = React.createRef(null);
+
+    this.handleSetValueInput = this.handleSetValueInput.bind(this);
   }
 
-  handleSetValueInput = (valueInput) => {
+  handleSetValueInput = (e) => {
+    const valueInput = e.target.value;
     this.setState({ valueInput: valueInput });
   };
   addTask = () => {
+    if (!this.state.valueInput.trim()) return;
+
+    const newTask = {
+      ...listTasksValue,
+      id: new Date().getTime(),
+      taskName: this.state.valueInput,
+    };
     this.setState({
       ...this.state,
-      listTasks: listTasks.push({
-        taskName: this.state.valueInput,
-        state: false,
-      }),
+      listTasks: [newTask, ...this.state.listTasks],
+      valueInput: "",
     });
-
-    console.log(this.state.listTasks);
+    this.inputRef.current.focus();
   };
 
   render() {
@@ -40,6 +48,7 @@ class TodolList extends Component {
           <Title title="TO DO LIST APPLICATION"></Title>
           <div className="todo-task_wrapp">
             <Input
+              ref={this.inputRef}
               valueInput={valueInput}
               onSetInput={this.handleSetValueInput}
             ></Input>
@@ -48,7 +57,7 @@ class TodolList extends Component {
         </div>
         <Divider></Divider>
         <ul className="todo-main">
-          <Items tasks={listTasks}></Items>
+          <Items tasks={this.state.listTasks}></Items>
         </ul>
         <Divider></Divider>
         <Panigation></Panigation>

@@ -1,26 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, forwardRef } from "react";
 import "./style.scss";
 
-export default class Input extends Component {
+class Input extends Component {
   constructor(props) {
     super(props);
     this.props = props;
-    this.handleChangeInput = this.handleChangeInput.bind(this);
-  }
-
-  handleChangeInput(e) {
-    this.props.onSetInput(e.target.value);
   }
 
   render() {
-    const { valueInput } = this.props;
+    const { valueInput, onSetInput } = this.props;
     return (
       <input
+        ref={this.props.inputRef}
         value={valueInput}
         className="input input-todo"
         placeholder="Add new task in here"
-        onChange={this.handleChangeInput}
+        onChange={onSetInput}
       ></input>
     );
   }
 }
+
+export default forwardRef((props, ref) => <Input inputRef={ref} {...props} />);

@@ -13,8 +13,8 @@ export default class Items extends Component {
     return (
       <>
         {tasks?.length > 0 &&
-          tasks?.map((taskItem, index) => (
-            <Item key={index} taskItem={taskItem}></Item>
+          tasks?.map((taskItem) => (
+            <Item key={taskItem.id} taskItem={taskItem}></Item>
           ))}
       </>
     );
