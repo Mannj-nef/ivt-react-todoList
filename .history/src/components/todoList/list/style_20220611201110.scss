@@ -1,0 +1,20 @@
+.todo {
+    &-tiem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 600;
+        padding: 23px 0;
+        .task-done {
+            color: #6a5af9;
+        }
+    }
+}
+.action {
+    &-wrapp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
