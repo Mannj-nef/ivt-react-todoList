@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TodolList from "./components/react-hooks/todoList/TodolList";
+import TodolList from "./components/react-class/todoList/TodolList";
 
 function App() {
   return (

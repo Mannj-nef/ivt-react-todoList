@@ -1,0 +1,26 @@
+.todo {
+    &-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 23px 0;
+        &-task_name {
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 20px;
+        }
+        .task-done {
+            color: #6a5af9;
+        }
+    }
+}
+.action {
+    &-wrapp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}

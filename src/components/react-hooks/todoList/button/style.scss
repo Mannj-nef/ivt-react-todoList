@@ -1,0 +1,21 @@
+.btn {
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &-active {
+        color: #f62682;
+    }
+    &-check {
+        color: #20e3b2;
+    }
+    &-add {
+        --size: 40px;
+        border: 2px solid #000;
+        border-radius: 100rem;
+        width: var(--size);
+        height: var(--size);
+    }
+}

@@ -1,0 +1,11 @@
+.input {
+    padding: 10px;
+    &-todo {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #6a5af9;
+    }
+    &:focus {
+        border-color: #35aaf8;
+    }
+}
